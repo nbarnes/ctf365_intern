@@ -1,0 +1,24 @@
+- people = [ {name: 'Marius 1', url: 'http://ctf365.com/assets/landingpage/profile/marius3.jpg'}, {name: 'Marius 2', url: 'http://ctf365.com/assets/landingpage/profile/mariuschis.jpg'}, {name: 'Ionut', url: 'http://ctf365.com/assets/landingpage/profile/ionutpopovici.jpg'}, {name: 'Ross', url: 'http://ctf365.com/assets/landingpage/profile/ross_simpson.jpg'}, {name: 'Cezar', url: 'http://ctf365.com/assets/landingpage/profile/cezarandrici.jpg'}, {name: 'Chris', url: 'http://ctf365.com/assets/landingpage/profile/profile-chris.jpg'} ]
+
+#about.section
+  .container
+    .row
+      .span12
+
+        -# About profiles
+        %h1
+          About
+          %span
+            Us
+        %p.lead
+          Meet the CTF365 Dream Team
+          %br
+
+        %ul.thumbnails
+          - people.each do |person|
+            %li.span2
+              -# About single profile
+              .thumbnail.hover.about-profile
+                = image_tag person[:url]
+                %h4
+                  = person[:name]
